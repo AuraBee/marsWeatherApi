@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Weather App</title>
+
+     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" 
+     rel="stylesheet">
+   
+     <!--Style-->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!--Scripts-->
+    <script src="scripts/index.js" defer></script>
+</head>
+
+<body>
+
+<!--Main Section--main weather section-->
+<main class="mars-current-weather">
+       <h1 class="main-title">
+           Latest Weather at Elysium Planititia
+       </h1>
+
+       <div class="date">
+            <h2 class="section-title section-title--date">
+            Sol 
+            <span data-current-sol></span></h2>
+            <p class="date__day" data-current-date></p>
+       </div>
+
+       <div class="temp">
+            <h2 class="section-title">
+            Temperature
+             </h2>
+
+              <p class="reading">
+                  High: 
+                  <span data-current-temp-high></span>
+                  °<span data-temp-unit></span>
+                </p>
+              <p class="reading">
+                  Low: 
+                  <span data-current-temp-low></span>
+                  °<span data-temp-unit></span> 
+                </p>
+         </div>
+       
+         <div class="wind">
+            <h2 class="section-title">Wind</h2>
+                <p class="reading">
+                <span data-wind-speed></span>kph
+                <span data-speed-unit></span>
+                </p>
+     
+            <div class="wind__direction">
+              <p class="sr-only" data-wind-direction-text></p>
+     
+              <!-- update --direction custom prop
+                   to change arrow direction -->
+              <div class="wind__arrow" data-wind-direction-arrow></div>
+            </div>
+          </div> 
+
+          
+<!--Gen info paragraph -->
+    <div class="info">
+       <p>InSight takes daily weather measurements
+           (temperature,wind,  pressure) on the surface of Mars at 
+           Elysium Planititia, a flat smooth plain near Mars' equator.
+       </p>
+       <p> This is the only part of Insights Mission. 
+           <a href="http://mars.nasa.gov/insight/mission/overview">
+        Click Here</a>To Find Out More</p>
+    </div>
+
+
+    <!-- TOGGLE temperature @ right-->
+        <div class="unit">
+            <label for ="cel"> °C</label>
+            <input type="radio" id="cel" name="unit" checked><!--sets as cel default unit -->
+
+            <button class="unit__toggle" data-unit-toggle></button> <!---toggle switch .: switches tween cel & fah-->
+
+            <label for ="fah">°F</label>
+            <input type="radio" id="fah" name="unit">
+        </div>
+ </main>    <!--/////END-OF MAIN & Toggle-///--> 
+  
+    
+<!--START OF >> prev weather..S-->
+   <div class="previous-weather show-weather">
+        <button for="weather-toggle"
+            class="show-previous-weather">
+            <span>&#8593; </span>  </button>  
+            <span class="sr-only">Show Previous Weather</span>
+   
+        <h2 class="main-title previous-weather__title">
+            Previous 7 days
+        </h2>   
+    </div>
+
+       <div class="previous-days" data-previous-sol> 
+         <div class="previous-day">  </div>
+
+
+<template data-previous-sols-template>
+    <div class="previous-day">
+        <h3 class="previous-day__sol">
+            Sol 
+            <span data-sol></span></h3>
+        <p class="prev-day__date" data-date> </p>
+            <p class="previous-day__temp">
+            High: 
+            <span data-temp-high></span>°C
+            <span data-temp-unit></span>
+            </p>
+
+        <p class="previous-day__temp">
+            Low: 
+            <span data-temp-low></span>
+            °C
+            <span data-temp-unit></span>
+        </p>
+        <button class="previous-day__more-info" data-select-button>
+            More Info
+        </button>
+    </div>
+</template>
+
+
+</body>
+</html>
