@@ -1,5 +1,5 @@
-const API_KEY = 'QkzYYbR84nfKOerv1nXUdGuDwuYULGLQ29LqlNuW'
-const API_URL ='https://api.nasa.gov/insight_weather/?api_key=QkzYYbR84nfKOerv1nXUdGuDwuYULGLQ29LqlNuW&feedtype=json&ver=1.0'
+//const API_KEY = ''
+//const API_URL ='https://api.nasa.gov/insight_weather/?api_key=DEMO_KEYY&feedtype=json&ver=1.0'
 
 const previousWeatherToggle = document.querySelector('.show-previous-weather');
 const previousWeather = document.querySelector('.previous-weather')
